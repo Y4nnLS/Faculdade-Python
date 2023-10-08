@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Lista de Usuários</h1>
@@ -11,8 +13,27 @@
         {% for usuario in usuarios %}
         <li>{{usuario[1]}} ({{usuario[2]}})</li>
         <a href="/excluir/{{ usuario[0] }}">Excluir</a>
+        <button onclick="openModal()">Atualizar Idade</button>
+    <dialog id="modal">
+        <h2>Atualize a Idade de um usuário</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur adipisci alias cumque neque? Corporis amet maxime perferendis cupiditate quia vero, corrupti facilis voluptatum explicabo illum dignissimos atque doloremque ea!</p>
+        <button onclick="closeModal()">Fechar</button>
+    </dialog>
+
+    <script>
+        function openModal() {
+            var modal = document.getElementById("modal");
+            modal.showModal();
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.close();
+        }
+    </script>
         {% endfor %}
     </ul>
+    
 
     <h2>Inserir Usuários</h2>
     <form method="POST" action="/inserir">
@@ -27,5 +48,7 @@
         <input type="submit" name="Inserir" required>
         <br>
     </form>
+    
+    
 </body>
 </html>
