@@ -1,0 +1,5 @@
+Escolher uma base de dados
+Apresentar qual base de dados a gente quer trabalhar e o que a gente quer analisar
+apresentar a proposta em um documento para a próxima aula 
+
+Base de dados escolhida: Spotify_Youtube

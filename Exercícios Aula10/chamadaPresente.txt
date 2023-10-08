@@ -1,0 +1,27 @@
+Alexandre - presente: S
+Arthur - presente: S
+Felipe F - presente: S
+Felipe P - presente: S
+Gabriel - presente: S
+Hiran - presente: S
+João - presente: N
+Lucas - presente: S
+Mariana - presente: S
+Thiago - presente: S
+Yang - presente: S
+Yann - presente: S
+Alexandre - presente: S
+Arthur - presente: S
+Alexandre - presente: S
+Arthur - presente: N
+Felipe F - presente: N
+Felipe P - presente: N
+Gabriel - presente: N
+Hiran - presente: N
+João - presente: N
+Lucas - presente: N
+Mariana - presente: N
+Thiago - presente: N
+Yang - presente: N
+Yann - presente: N
+Alexandre - presente: S
