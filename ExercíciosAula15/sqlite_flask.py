@@ -13,7 +13,7 @@ def index():
     cursor.execute('SELECT * FROM usuarios')
     usuarios = cursor.fetchall()
     conn.close()
-    return render_template('index.html', usuarios = usuarios)
+    return render_template('index.html', usuarios=usuarios)
 
 @app.route('/inserir', methods=['POST'])
 def insert():
@@ -21,11 +21,10 @@ def insert():
     idade = request.form['idade']
     conn = conectar_db()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO usuarios (nome,idade) VALUES(?,?)', (nome,idade))
+    cursor.execute('INSERT INTO usuarios (nome,idade) VALUES(?,?)', (nome, idade))
     conn.commit()
     conn.close()
     return redirect(url_for('index'))
-
 
 @app.route('/excluir/<int:id>')
 def delet(id):
@@ -35,5 +34,25 @@ def delet(id):
     conn.commit()
     conn.close()
     return redirect(url_for('index'))
+
+@app.route('/editar/<int:id>')
+def editar(id):
+    conn = conectar_db()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM usuarios WHERE id=?', (id,))
+    usuario = cursor.fetchone()
+    conn.close()
+    return render_template('editar.html', usuario=usuario)
+
+@app.route('/atualizar/<int:id>', methods=['POST'])
+def atualizar(id):
+    idade = request.form['idade']
+    conn = conectar_db()
+    cursor = conn.cursor()
+    cursor.execute('UPDATE usuarios SET idade=? WHERE id=?', (idade, id))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

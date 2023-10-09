@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Alterar Idade</title>
+  </head>
+  <body>
+    <h1>Alterar Idade do usuário</h1>
+    <form method="POST" action="/atualizar/{{ usuario[0] }}">
+      <label for="idade">Nova Idade:</label>
+      <input type="number" id="idade" name="idade" value="{{ usuario[2] }}">
+      <br>
+      <input type="submit" value="Atualizar">
+    </form>
+  </body>
+</html>
