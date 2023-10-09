@@ -58,5 +58,11 @@ def update(id):
         contato = Contato.query.get(id)
         return render_template('atualiza.html', contato = contato)
 
+@app.route('/listar', methods=['POST'])
+def list():
+    nome = request.form['nome']
+    contatos = Contato.query.filter(Contato.nome.like(f'%{nome}%')).all()
+    return render_template("lista.html", contato = contatos)
+
 if __name__ == '__main__':
     app.run(debug = True)
