@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cu Pinto Bosta Mijo</title>
+</head>
+<body>
+    <h1>Contatos</h1>
+
+        <ul>
+            {% for contato in contatos %}
+            <li>{{ contato.nome }} ( {{ contato.idade }} anos)</li>
+            <a href="/excluir/{{ contato.id }}">excluir</a>
+            <a href="/atualizar/{{ contato.id }}">Atualizar</a>
+            {% endfor %}
+        </ul>
+
+    <h2>Inserir Contatos</h2>
+    <form method="POST" action="/inserir">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome"><br>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade"><br>
+        <input type="submit" value="Inserir">
+    </form>
+        
+</body>
+</html>
