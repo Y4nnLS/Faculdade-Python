@@ -23,6 +23,14 @@ class Contato(db.Model):
 
 
 
+
+
+
+
+
+
+
+
 @app.route('/')
 def index():
     db.create_all()
